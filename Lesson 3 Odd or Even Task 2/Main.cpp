@@ -1,4 +1,6 @@
 #include <iostream>
+#include <cstdlib>
+
 using std::endl;
 using std::cout;
 using std::cin;
@@ -20,6 +22,31 @@ https://www.cprogramming.com/tutorial/modulus.html
 https://www.w3schools.com/cpp/cpp_howto_random_number.asp
 */
 
-int main() {
+int generateRandomNumber(int max) {
+	return (rand() % max) + 1;
+}
 
+bool checkIfOddOrEven(int x) {
+	if (x % 2 == 0) {
+		return false;
+	}
+	else {
+		return true;
+	}
+}
+
+int main() {
+	int randomNumber = generateRandomNumber(100);
+	cout << "Random Number is: " << randomNumber << endl;
+
+	bool isOdd = checkIfOddOrEven(randomNumber);
+
+	if (isOdd) {
+		cout << "ODD" << endl;
+	}
+	else {
+		cout << "EVEN" << endl;
+	}
+
+	return 0;
 }
